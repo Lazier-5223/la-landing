@@ -2,22 +2,35 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Check } from "lucide-react";
 
-const services = [
+const cards = [
   {
     image: "/images/房子.jpg",
     title: "精准匹配 & 生活避坑",
-    offset: "left",
+    items: [
+      "结合孩子年龄性格和规划，筛选最合适的私校插班或营地，协助完成申请全流程",
+      "提前帮你评估住宿区域的治安和生活便利度，选个住着舒服省心的地方",
+      "提前对接租车、出行等落地事项，确保下飞机就能顺畅运转",
+    ],
   },
   {
     image: "/images/school.jpg",
     title: "校园衔接 & 全程保障",
-    offset: "right",
+    items: [
+      "抵达头天，带你把社区转一遍：哪里安全、哪里买菜、急诊在哪、驾驶习惯，日常场景怎么应对，真实生活快速上手，少走弯路",
+      "开学第一天陪进校园，帮孩子认识老师、熟悉环境，家长也能少担心",
+      "每周定期帮你和老师们沟通，及时了解孩子在校真实状态，给孩子更多支持",
+      "游学期间遇到突发情况，车辆剐蹭、医疗突发、生活疑问，随时联系我，第一时间帮你理清楚怎么处理",
+    ],
   },
   {
     image: "/images/日落.jpg",
     title: "地道体验 & 资源链接",
-    offset: "left",
+    items: [
+      "大人能放松,小孩长见识：课余时间别只会去游乐园和大众打卡地；分享当地人才知道的周边游线路和玩法",
+      "同步推荐本地亲子活动的时间和资讯：比如博物馆的主题互动课程、节日庆典、社区活动，让孩子真正融入，而不只是旁观",
+    ],
   },
 ];
 
@@ -36,33 +49,40 @@ export default function ServicesSection() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-          {services.map((item, i) => (
+          {cards.map((card, i) => (
             <motion.article
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex flex-col"
+              className="group flex flex-col h-full"
             >
-              <div className="relative aspect-[3/4] rounded-sm overflow-hidden bg-olive/10">
+              <div className="bg-[#F9F8F6] rounded-2xl shadow-sm border border-brown/10 flex flex-col h-full overflow-hidden">
+                <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
-                  src={item.image}
-                  alt=""
-                  fill
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div
-                  className={`absolute bottom-0 z-10 flex items-center px-4 py-4 lg:py-5 bg-white shadow-sm transition-transform duration-300 group-hover:-translate-y-0.5 left-0 right-0 md:w-[92%] ${
-                    item.offset === "left"
-                      ? "md:left-[4%] md:right-auto"
-                      : "md:left-auto md:right-[4%]"
-                  }`}
-                >
-                  <span className="font-sans text-base lg:text-lg font-medium text-gray-700 tracking-wide">
-                    {item.title}
-                  </span>
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="flex flex-col items-stretch text-left px-5 pt-5 pb-6 lg:px-6 lg:pt-6 lg:pb-7 gap-4">
+                  <h3 className="font-serif text-lg lg:text-xl text-olive">
+                    {card.title}
+                  </h3>
+                  <ul className="space-y-2.5 text-[13px] lg:text-sm text-gray-700 leading-relaxed tracking-wide">
+                    {card.items.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2"
+                      >
+                        <Check className="mt-0.5 w-3.5 h-3.5 text-brown shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </motion.article>
