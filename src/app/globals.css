@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #f5f5f5;
+  --olive: #3d463d;
+  --brown: #966b4a;
+}
+
+body {
+  @apply bg-cream text-olive antialiased;
+}
