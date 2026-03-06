@@ -10,7 +10,7 @@ const services = [
     offset: "left",
   },
   {
-    image: "/images/学校.jpg",
+    image: "/images/school.jpg",
     title: "校园衔接 & 全程保障",
     offset: "right",
   },
