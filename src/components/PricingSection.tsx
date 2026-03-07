@@ -43,10 +43,7 @@ export default function PricingSection() {
             viewport={{ once: false, amount: 0.6 }}
             className="inline-flex flex-col items-center gap-2 mb-6"
           >
-            <div className="flex items-baseline gap-3 font-serif">
-              <span className="text-sm lg:text-base text-cream/70 line-through">
-                <span className="font-semibold">¥26,800/月</span>
-              </span>
+            <div className="flex items-baseline font-serif">
               <span className="text-3xl lg:text-4xl font-bold text-[#FBBF24]">
                 ¥18,800/月
               </span>
@@ -61,7 +58,7 @@ export default function PricingSection() {
             className="inline-flex max-w-md items-center justify-center rounded-full border border-cream/25 bg-white/5 px-5 py-3 shadow-sm"
           >
             <p className="font-sans text-xs lg:text-sm text-cream/90 leading-relaxed">
-              出发前 10 周确认，锁定优惠价
+              提前锁定私校/营地有限名额
             </p>
           </motion.div>
         </div>
