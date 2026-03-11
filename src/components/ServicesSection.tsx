@@ -8,7 +8,7 @@ const row1 = {
   image: "/images/school.jpg",
   title: "精准匹配 · 深度方案定制",
   price: "$2,180",
-  priceUnit: "/ 项目服务费",
+  priceUnit: "/ 单次项目服务费",
   items: [
     "结合孩子性格与未来规划，筛选最契合的私校插班或营地名额，协助完成全流程申请",
     "提前帮你评估住宿区域的治安和生活便利度，选个住着舒服省心的地方",
@@ -30,19 +30,25 @@ const row2 = {
   ],
 };
 
-function PriceBlock({
-  price,
-  priceUnit,
-}: {
-  price: string;
-  priceUnit: string;
-}) {
+function PriceBlock({ price, priceUnit }: { price: string; priceUnit: string }) {
+  const boldTarget = "单次";
+  const hasBold = priceUnit.includes(boldTarget);
+  const [before, after] = hasBold ? priceUnit.split(boldTarget) : [priceUnit, ""];
+
   return (
     <div className="inline-block bg-brown/[0.06] px-4 py-2.5 rounded-sm">
       <p className="font-serif text-xl lg:text-2xl text-brown tracking-widest">
         {price}
         <span className="font-sans text-sm text-olive/80 tracking-normal ml-1">
-          {priceUnit}
+          {hasBold ? (
+            <>
+              {before}
+              <span className="font-semibold">{boldTarget}</span>
+              {after}
+            </>
+          ) : (
+            priceUnit
+          )}
         </span>
       </p>
       <span className="block mt-2 h-px w-full max-w-[120px] bg-brown/25" />

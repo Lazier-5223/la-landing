@@ -11,12 +11,12 @@ const steps = [
   },
   {
     icon: GraduationCap,
-    title: "30% 录取到位",
+    title: "40% 录取到位",
     desc: "拿到正式入学通知\n住宿锁定后支付",
   },
   {
     icon: MapPin,
-    title: "40% 落地到达",
+    title: "30% 落地到达",
     desc: "见面即付，开启为期一个月的\n游学+本地生活体验",
   },
 ];
@@ -37,7 +37,7 @@ export default function PricingSection() {
             transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
             className="font-serif text-xl lg:text-2xl font-bold text-[#FBBF24] tracking-widest"
           >
-            $2,980 / 周期（包含在地支持4周）
+            $2,980（包含在地支持4周）
           </motion.p>
         </div>
 
