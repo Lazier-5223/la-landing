@@ -214,7 +214,7 @@ export default function QuestionnairePage() {
                     孩子的性格是哪一类？
                   </label>
                   <p className="font-sans text-xs text-olive/70 mb-2">
-                    是那种很快就能跟小朋友打成一片的'自来熟'，还是比较'慢热'的类型？。
+                    是那种很快就能跟小朋友打成一片的&#39;自来熟&#39;，还是比较&#39;慢热&#39;的类型？。
                   </p>
                   <textarea
                     id="childPersonality"
@@ -296,7 +296,7 @@ export default function QuestionnairePage() {
 
                 <div>
                   <label className={labelClass}>
-                    除了申请学校，您还希望我帮您"避坑"的是哪部分？
+                    除了申请学校，您还希望我帮您&quot;避坑&quot;的是哪部分？
                     <span className="ml-2 font-medium text-brown">可多选</span>
                   </label>
                   <div className="flex flex-col gap-2.5 pt-1">
