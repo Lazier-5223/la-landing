@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const FIELD_LABELS: Record<string, string> = {
   wechatNickname: "微信昵称",
   whenYear: "计划来的年份",
@@ -41,7 +39,8 @@ export async function POST(request: Request) {
       { status: 500 }
     );
   }
-  if (!process.env.RESEND_API_KEY) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
     return NextResponse.json(
       { error: "RESEND_API_KEY 未配置" },
       { status: 500 }
@@ -49,6 +48,7 @@ export async function POST(request: Request) {
   }
 
   try {
+    const resend = new Resend(apiKey);
     const body = (await request.json()) as Record<string, string>;
     const text = buildEmailBody(body);
 
