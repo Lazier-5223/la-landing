@@ -58,7 +58,7 @@ export default function Navbar({ standalone = false }: NavbarProps) {
           </div>
         ) : (
           <Link
-            href="/home"
+            href="/"
             className="flex items-center gap-3 hover:opacity-90 transition-opacity"
           >
             <span className="bg-transparent flex items-center justify-center shrink-0">
@@ -83,7 +83,7 @@ export default function Navbar({ standalone = false }: NavbarProps) {
         {!standalone && (
           <div className="flex items-center gap-8">
             <Link
-              href="/home"
+              href="/"
               className="text-sm lg:text-base font-medium text-cream/90 hover:text-cream transition-colors"
             >
               Home
