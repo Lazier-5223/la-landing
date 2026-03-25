@@ -29,3 +29,4 @@ npm run dev
 - `src/components/Footer.tsx`：深橄榄绿页脚，Logo + 微信联系指引
 
 占位区块已预留标题/描述结构，内容可后续填充。
+# ca-school-district-report
